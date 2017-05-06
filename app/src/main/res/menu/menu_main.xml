@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.aaron.drawing1.MainActivity">
+    <item
+        android:id="@+id/sign_in"
+        android:orderInCategory="100"
+        android:title="@string/action_sign_in"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/jobsearch"
+        android:orderInCategory="100"
+        android:title="Search Jobs"
+        app:showAsAction="never" />
+</menu>
