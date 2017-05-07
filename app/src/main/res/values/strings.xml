@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">"Ruby Jobs "</string>
+    <string name="app_name">"Rubyster"</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->

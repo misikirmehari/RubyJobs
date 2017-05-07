@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.misikirmehari.rubyjobs.MainActivity">
+    <include layout="@layout/logo"/>
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -34,7 +35,10 @@
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
+        android:divider="@color/lightMaroon"
+        android:dividerHeight="4px"
+
         />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -62,8 +62,10 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         contactList = new ArrayList<>();
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall( "https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=b88d1a7d390e45e4bb74cfecc1c1246d");
+            String jsonStr = sh.makeServiceCall( "https://newsapi.org/v1/articles?source=techradar&sortBy=latest&apiKey=b88d1a7d390e45e4bb74cfecc1c1246d");
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
