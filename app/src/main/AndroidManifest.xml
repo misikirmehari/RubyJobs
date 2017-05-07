@@ -35,7 +35,7 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".JobActivity" />
         <activity android:name=".SingleNewsView" />
-        <activity android:name=".SavedJobs"></activity>
+        <activity android:name=".SavedJobsActivity" />
     </application>
 
 </manifest>

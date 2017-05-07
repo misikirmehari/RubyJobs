@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.misikirmehari.rubyjobs.SavedJobs">
+    tools:context="com.example.misikirmehari.rubyjobs.SavedJobsActivity">
 
     <ListView
         android:id="@+id/saved_job_list"

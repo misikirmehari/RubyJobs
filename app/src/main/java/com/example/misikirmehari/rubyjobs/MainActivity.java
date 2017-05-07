@@ -1,28 +1,18 @@
 package com.example.misikirmehari.rubyjobs;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -96,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(jobintent);
                 return true;
             case R.id.savedjobs:
-                Intent savedjobsintent = new Intent(this, SavedJobs.class);
+                Intent savedjobsintent = new Intent(this, SavedJobsActivity.class);
                 startActivity(savedjobsintent);
                 return true;
 

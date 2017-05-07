@@ -24,7 +24,7 @@ public class JobCard {
 
 
     public static final String MyPREFERENCES = "MyPrefs" ;
-    public static final String NameAgeText = "namekey";
+
 
 
 
@@ -36,17 +36,19 @@ public class JobCard {
 
     private JobsDec mjobs;
     private Context mContext;
-    public SharedPreferences msharedpreferences;
+
+
+
+    //DatabaseHandler db = new DatabaseHandler(mContext);
+
+
 
     private SwipePlaceHolderView mSwipeView;
 
-    public JobCard(Context context, JobsDec jobsDec, SwipePlaceHolderView swipeView,SharedPreferences sharedpreferences) {
+    public JobCard(Context context, JobsDec jobsDec, SwipePlaceHolderView swipeView) {
         mContext = context;
         mjobs = jobsDec;
         mSwipeView = swipeView;
-        msharedpreferences = sharedpreferences;
-        msharedpreferences = mContext.getSharedPreferences(MyPREFERENCES,mContext.MODE_PRIVATE);
-
 
 
     }
@@ -83,11 +85,14 @@ public class JobCard {
     private void onSwipeIn(){
 
         String n = mjobs.getJobtitle();
-        Log.i("Sharedprefs", n);
 
-        SharedPreferences.Editor editor = msharedpreferences.edit();
-        editor.putString(NameAgeText,n);
-        editor.commit();
+        Log.i("jobtitle:", n);
+
+        Intent saveintent = new Intent(mContext,SavedJobsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        saveintent.putExtra("job", n);
+        mContext.startActivity(saveintent);
+
+
 
         Log.d("EVENT", "onSwipedIn");
     }
