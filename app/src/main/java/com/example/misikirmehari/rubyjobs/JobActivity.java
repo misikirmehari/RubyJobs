@@ -62,7 +62,7 @@ public class JobActivity extends AppCompatActivity {
 
 
         for(JobsDec jobs : Utils.loadjobs(this.getApplicationContext())){
-            mSwipeView.addView(new JobCard(mContext, jobs, mSwipeView));
+            mSwipeView.addView(new JobCard(mContext, jobs, mSwipeView ,null));
 
         }
 

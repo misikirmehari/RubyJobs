@@ -95,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent jobintent = new Intent(this, JobActivity.class);
                 startActivity(jobintent);
                 return true;
+            case R.id.savedjobs:
+                Intent savedjobsintent = new Intent(this, SavedJobs.class);
+                startActivity(savedjobsintent);
+                return true;
 
 
 

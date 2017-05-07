@@ -32,7 +32,7 @@ public class Utils {
             Gson gson = builder.create();
             JSONArray array = new JSONArray(loadJSONFromAsset(context, "jobs.json"));
             List<JobsDec> JobsList = new ArrayList<>();
-            for(int i=0;i<array.length();i++){
+            for(int i=0;i< array.length();i++){
                 JobsDec jobs = gson.fromJson(array.getString(i), JobsDec.class);
                 JobsList.add(jobs);
             }
