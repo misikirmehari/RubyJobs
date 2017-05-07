@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="lightMaroon">#d2a2a4</color>
+    <color name="Maroon">#280507</color>
+
 </resources>

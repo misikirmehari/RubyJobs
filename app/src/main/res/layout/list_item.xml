@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
         android:paddingTop="6dip"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/Maroon"
         android:textSize="16sp"
         android:textStyle="bold"
         />
@@ -23,7 +23,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/mobile"
@@ -34,7 +34,8 @@
         android:autoLink="web"/>
 
     <ImageView
-        android:id="@+id/news_image"
+
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
 </LinearLayout>

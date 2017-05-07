@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/news_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:background="#000000"
+        android:padding="1dp" />
+
+    <TextView
+        android:id="@+id/authorlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/authorlabel" />
+
+    <TextView
+        android:id="@+id/titlelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/authorlabel"
+        android:text="title" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/author"
+        android:layout_toRightOf="@+id/titlelabel" />
+
+    <TextView
+        android:id="@+id/descriptionlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlelabel"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/descriptionlabel" />
+
+    <TextView
+        android:id="@+id/urllabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionlabel"
+        android:text="url" />
+
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_toRightOf="@+id/urllabel" />
+
+    <TextView
+        android:id="@+id/Datelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/urllabel"
+        android:text="Date" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/url"
+        android:layout_toRightOf="@+id/urllabel" />
+
+
+
+</RelativeLayout>

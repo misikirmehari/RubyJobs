@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -16,13 +18,16 @@ import com.mindorks.placeholderview.annotations.swipe.SwipeIn;
 public class JobActivity extends AppCompatActivity {
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_job);
 
-        ImageButton reject = (ImageButton) findViewById(R.id.rejectBtn);
-        ImageButton accept = (ImageButton) findViewById(R.id.acceptBtn);
 
         mSwipeView = (SwipePlaceHolderView)findViewById(R.id.swipeView);
         mContext = getApplicationContext();
@@ -31,7 +36,8 @@ public class JobActivity extends AppCompatActivity {
         findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mSwipeView.doSwipe(false);
+               Log.i("string", "rejected");
+                mSwipeView.doSwipe(false);
             }
         });
 
