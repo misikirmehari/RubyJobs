@@ -99,23 +99,12 @@ public class ListViewAdapter extends BaseAdapter {
 			public void onClick(View arg0) {
 				// Get the position
 				resultp = data.get(position);
-				Intent intent = new Intent(context, SingleItemView.class);
+				Intent intent = new Intent(context, SingleNewsView.class);
 
-				// Pass all data rank
-				intent.putExtra("author", resultp.get(MainActivity.AUTHOR));
-				// Pass all data country
-				intent.putExtra("title", resultp.get(MainActivity.DESCRIPTION));
-				// Pass all data population
-				intent.putExtra("description",resultp.get(MainActivity.TITLE));
-				// Pass all data flag
-				intent.putExtra("url",resultp.get(MainActivity.URL));
-				// Pass all data flag
-				intent.putExtra("date",resultp.get(MainActivity.DATE));
-				// Pass all data flag
 
-				intent.putExtra("image", resultp.get(MainActivity.IMAGE));
-				// Start SingleItemView Class
-				context.startActivity(intent);
+                intent.putExtra("url",resultp.get(MainActivity.URL));
+                context.startActivity(intent);
+
 
 			}
 		});
