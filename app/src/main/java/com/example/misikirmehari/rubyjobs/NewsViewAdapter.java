@@ -10,10 +10,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.misikirmehari.rubyjobs.HelperClasses.ImageLoader;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListViewAdapter extends BaseAdapter {
+
+public class NewsViewAdapter extends BaseAdapter {
 
 	// Declare Variables
 	Context context;
@@ -22,8 +25,8 @@ public class ListViewAdapter extends BaseAdapter {
 	ImageLoader imageLoader;
 	HashMap<String, String> resultp = new HashMap<String, String>();
 
-	public ListViewAdapter(Context context,
-                           ArrayList<HashMap<String, String>> arraylist) {
+	public NewsViewAdapter(Context context,
+                           ArrayList<HashMap<String, String >> arraylist) {
 		this.context = context;
 		data = arraylist;
 		imageLoader = new ImageLoader(context);
@@ -57,6 +60,7 @@ public class ListViewAdapter extends BaseAdapter {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		View itemView = inflater.inflate(R.layout.listview_item, parent, false);
+
 		// Get the position
 		resultp = data.get(position);
 
@@ -100,14 +104,14 @@ public class ListViewAdapter extends BaseAdapter {
 				// Get the position
 				resultp = data.get(position);
 				Intent intent = new Intent(context, SingleNewsView.class);
-
-
-                intent.putExtra("url",resultp.get(MainActivity.URL));
+				intent.putExtra("url",resultp.get(MainActivity.URL));
                 context.startActivity(intent);
 
 
 			}
 		});
+
+
 		return itemView;
 	}
 }

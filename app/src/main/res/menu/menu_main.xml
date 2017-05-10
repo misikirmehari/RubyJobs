@@ -2,16 +2,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.aaron.drawing1.MainActivity">
-    <item
-        android:id="@+id/sign_in"
-        android:orderInCategory="100"
-        android:title="@string/action_sign_in"
-        app:showAsAction="never" />
 
     <item
         android:id="@+id/jobsearch"
         android:orderInCategory="100"
-        android:title="Search Jobs"
+        android:title="Jobs"
         app:showAsAction="never" />
 
     <item
@@ -19,4 +14,17 @@
         android:orderInCategory="100"
         android:title="Saved Jobs"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ruby_tool_box"
+        android:orderInCategory="100"
+        android:title="Tool Box"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ruby_gems"
+        android:orderInCategory="100"
+        android:title="Gems"
+        app:showAsAction="never" />
+
 </menu>

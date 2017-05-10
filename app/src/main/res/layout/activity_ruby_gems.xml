@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.misikirmehari.rubyjobs.SavedJobsActivity">
+    tools:context="com.example.misikirmehari.rubyjobs.RubyRefsActivity">
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ruby_gems_web_view"
+        >
+    </WebView>
 
-    <ListView
-        android:id="@+id/saved_job_list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:divider="@color/lightMaroon"
-        android:dividerHeight="4px"
-        />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,16 +1,20 @@
-package com.example.misikirmehari.rubyjobs;
+package com.example.misikirmehari.rubyjobs.HelperClasses;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v4.view.ViewPropertyAnimatorListener;
+
+import com.example.misikirmehari.rubyjobs.SavedJobs;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by misikirmehari on 5/7/17.
+ *
+ * Helper Class to save Jobs in Database
  */
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -20,14 +24,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "savedJobsManager.db";
 
-    // Contacts table name
+    // Table name
     private static final String TABLE_SAVED_JOBS = "savedjobs";
 
 
-    // Contacts Table Columns names
+    // Saved Jobs Columns names
     public static final String KEY_ID = "id";
     public static final String KEY_JOBTITLE = "jobtitle";
-
+    public static final String KEY_COMPANY = "company";
+    public static final String KEY_URL = "url";
 
 
     public DatabaseHandler(Context context) {
@@ -40,7 +45,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String CREATE_SAVEDJOBS_TABLE = "CREATE TABLE " + TABLE_SAVED_JOBS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_JOBTITLE + " TEXT " + ")";
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_JOBTITLE + " TEXT,"
+                + KEY_COMPANY + " TEXT," + KEY_URL + " TEXT " + ")";
 
         db.execSQL(CREATE_SAVEDJOBS_TABLE);
 
@@ -57,20 +63,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-    // Adding new contact
+    // Adding new JOB
     public void addSavedJob(SavedJobs savedJobs) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
-        values.put(KEY_JOBTITLE, savedJobs.getJobTitle()); // Contact Name
 
+        values.put(KEY_JOBTITLE, savedJobs.getJobTitle());
+        values.put(KEY_COMPANY,savedJobs.getCompany());
+        values.put(KEY_URL,savedJobs.getUrl());
 
-        // Inserting Row
         db.insert(TABLE_SAVED_JOBS, null, values);
         db.close(); // Closing database connection
     }
 
-    // Getting single contact
+    // Getting single saved job
     public SavedJobs getSavedJob(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -81,14 +87,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
         SavedJobs savedJobs = new SavedJobs(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1));
-        // return contact
+                cursor.getString(1), cursor.getString(2),cursor.getString(3));
+
         return savedJobs;
     }
 
+    public void remove(long id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String string =String.valueOf(id);
+        db.execSQL("DELETE FROM favorite WHERE _id = '" + string + "'");
+    }
 
 
-    // Getting All Contacts
+    // Getting All Savedjobs
     public List<SavedJobs> getAllSavedJobs() {
         List<SavedJobs> savedJobsList = new ArrayList<SavedJobs>();
         // Select All Query
@@ -103,30 +114,32 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 SavedJobs savedJobs = new SavedJobs();
                 savedJobs.setID(Integer.parseInt(cursor.getString(0)));
                 savedJobs.setJobTitle(cursor.getString(1));
+                savedJobs.setCompany(cursor.getString(2));
+                savedJobs.setUrl(cursor.getString(3));
 
-                // Adding contact to list
+
                 savedJobsList.add(savedJobs);
             } while (cursor.moveToNext());
         }
 
-        // return contact list
         return savedJobsList;
     }
 
-    // Updating single contact
+
     public int updateSavedJob(SavedJobs savedJobs) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(KEY_JOBTITLE, savedJobs.getJobTitle());
-
+        values.put(KEY_COMPANY,savedJobs.getCompany());
+        values.put(KEY_URL,savedJobs.getUrl());
 
         // updating row
         return db.update(TABLE_SAVED_JOBS, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(savedJobs.getID()) });
     }
 
-    // Deleting single contact
+    // Deleting single Job
     public void deleteSavedJob(SavedJobs savedJobs) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_SAVED_JOBS, KEY_ID + " = ?",
@@ -134,13 +147,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    // Deleting the whole Table
+    public void deleteAll()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_SAVED_JOBS,null,null);
+        db.close();
+    }
 
-    // Getting contacts Count
+    // Getting Jobs Count
     public int getSavedJobsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_SAVED_JOBS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.close();
+
         // return count
         return cursor.getCount();
     }

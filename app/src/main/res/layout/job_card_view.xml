@@ -6,9 +6,12 @@
     android:layout_height="800dp"
     android:layout_marginBottom="50dp"
     android:orientation="vertical">
+    <include layout="@layout/logo"/>
+
+
     <android.support.v7.widget.CardView
         android:orientation="vertical"
-        android:background="@color/colorAccent"
+        android:background="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -20,22 +23,58 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="bottom"
-            android:gravity="center|left"
-            android:paddingLeft="20dp">
+            android:gravity="center|top|left"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            >
+
             <TextView
-                android:id="@+id/nameAgeTxt"
+                android:id="@+id/job_title"
                 android:layout_width="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18dp"
+                android:textColor="@color/Maroon"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:id="@+id/locationNameTxt"
+                android:id="@+id/company_name"
+                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/city"
+                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/job_description_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:textSize="20sp"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/job_date_posted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:textSize="18sp"
+                android:textStyle="normal"/>
+            <TextView
+                android:id="@+id/job_url"
+                android:paddingTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14dp"
-                android:textStyle="normal"/>
+                android:autoLink="web"
+                android:textStyle="italic"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </FrameLayout>
+
+

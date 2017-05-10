@@ -1,10 +1,13 @@
-package com.example.misikirmehari.rubyjobs;
+package com.example.misikirmehari.rubyjobs.HelperClasses;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.widget.ImageView;
+
+import com.example.misikirmehari.rubyjobs.R;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,7 +25,7 @@ import java.util.concurrent.Executors;
 
 public class ImageLoader {
 
-	com.example.misikirmehari.rubyjobs.MemoryCache memoryCache = new com.example.misikirmehari.rubyjobs.MemoryCache();
+	MemoryCache memoryCache = new MemoryCache();
 	FileCache fileCache;
 	private Map<ImageView, String> imageViews = Collections
 			.synchronizedMap(new WeakHashMap<ImageView, String>());

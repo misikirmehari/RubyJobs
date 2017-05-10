@@ -1,4 +1,4 @@
-package com.example.misikirmehari.rubyjobs;
+package com.example.misikirmehari.rubyjobs.HelperClasses;
 
 import android.graphics.Bitmap;
 import android.util.Log;

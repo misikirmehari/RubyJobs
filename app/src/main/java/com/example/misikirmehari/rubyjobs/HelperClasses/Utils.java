@@ -1,9 +1,10 @@
-package com.example.misikirmehari.rubyjobs;
+package com.example.misikirmehari.rubyjobs.HelperClasses;
 
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
+import com.example.misikirmehari.rubyjobs.JobsDec;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

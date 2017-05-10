@@ -30,12 +30,10 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
         <activity android:name=".JobActivity" />
         <activity android:name=".SingleNewsView" />
         <activity android:name=".SavedJobsActivity" />
+        <activity android:name=".RubyRefsActivity" />
     </application>
 
 </manifest>

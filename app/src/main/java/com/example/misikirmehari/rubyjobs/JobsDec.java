@@ -18,9 +18,13 @@ public class JobsDec {
     @Expose
     private String company;
 
-    @SerializedName("city")
+    @SerializedName("formattedLocationFull")
     @Expose
     private String city;
+
+    @SerializedName("snippet")
+    @Expose
+    private String Description;
 
     @SerializedName("date")
     @Expose
@@ -53,5 +57,29 @@ public class JobsDec {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

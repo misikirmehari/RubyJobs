@@ -1,4 +1,9 @@
 package com.example.misikirmehari.rubyjobs;
+/**
+ *  This activity is where the application starts and
+ *
+ *
+ */
 
 import android.content.Intent;
 import android.graphics.PixelFormat;
@@ -18,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         Window window = getWindow();
         window.setFormat(PixelFormat.RGBA_8888);
     }
-    /** Called when the activity is first created. */
+
     Thread splashTread;
 
 
@@ -43,7 +48,6 @@ public class SplashActivity extends AppCompatActivity {
         l.clearAnimation();
         l.startAnimation(anim);
 
-
         anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         anim.reset();
         ImageView iv = (ImageView) findViewById(R.id.splash);
@@ -60,6 +64,7 @@ public class SplashActivity extends AppCompatActivity {
                         sleep(100);
                         waited += 100;
                     }
+                    // Start Main Activity
                     Intent intent = new Intent(SplashActivity.this,
                             MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -74,6 +79,5 @@ public class SplashActivity extends AppCompatActivity {
             }
         };
         splashTread.start();
-
     }
 }

@@ -47,12 +47,4 @@ public class SingleNewsView extends Activity {
 
 	}
 
-
-
-
-
-
-
-
-
 }

@@ -1,21 +1,18 @@
 package com.example.misikirmehari.rubyjobs;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageButton;
 
+import com.example.misikirmehari.rubyjobs.HelperClasses.Utils;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
-import com.mindorks.placeholderview.annotations.swipe.SwipeIn;
+
 
 public class JobActivity extends AppCompatActivity {
+
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
 
@@ -29,28 +26,8 @@ public class JobActivity extends AppCompatActivity {
         setContentView(R.layout.activity_job);
 
 
-        mSwipeView = (SwipePlaceHolderView)findViewById(R.id.swipeView);
+        mSwipeView = (SwipePlaceHolderView) findViewById(R.id.swipeView);
         mContext = getApplicationContext();
-
-
-        findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               Log.i("string", "rejected");
-                mSwipeView.doSwipe(false);
-            }
-        });
-
-        findViewById(R.id.acceptBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mSwipeView.doSwipe(true);
-                Log.i("Sent to reject", " Accepted");
-
-            }
-        });
-
-
 
         mSwipeView.getBuilder()
                 .setDisplayViewCount(3)
@@ -61,11 +38,11 @@ public class JobActivity extends AppCompatActivity {
                         .setSwipeOutMsgLayoutId(R.layout.job_swipe_reject));
 
 
-        for(JobsDec jobs : Utils.loadjobs(this.getApplicationContext())){
+        for (JobsDec jobs : Utils.loadjobs(this.getApplicationContext())) {
             mSwipeView.addView(new JobCard(mContext, jobs, mSwipeView));
 
         }
 
-        }
+    }
 
 }
