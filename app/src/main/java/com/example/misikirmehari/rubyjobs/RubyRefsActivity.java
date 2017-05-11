@@ -31,7 +31,15 @@ public class RubyRefsActivity extends AppCompatActivity {
         String Flag = intent.getStringExtra("uri");
 
         wv.loadUrl(Flag);
-//        setContentView(wv);
+
+        wv.setWebViewClient(new WebViewClient(){
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return false;
+            }
+        });
+
+
     }
 }
 
